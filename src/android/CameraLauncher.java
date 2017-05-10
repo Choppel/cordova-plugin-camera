@@ -299,6 +299,8 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
         //We can write to this URI, this will hopefully allow us to write files to get to the next step
         intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
 
+        intent.putExtra("android.intent.extra.quickCapture", true);   
+        
         if (this.cordova != null) {
             // Let's check to make sure the camera is actually installed. (Legacy Nexus 7 code)
             PackageManager mPm = this.cordova.getActivity().getPackageManager();
